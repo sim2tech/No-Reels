@@ -1,0 +1,73 @@
+/* Reels button in the sidebar / bottom bar (exact /reels/ link only,
+   so reels shared in DMs are not affected). */
+html.rf-on a[href="/reels/"],
+html.rf-on a[href="/reels"] {
+  display: none !important;
+}
+html.rf-on :is(div, li):has(> a[href="/reels/"]),
+html.rf-on :is(div, li):has(> a[href="/reels"]) {
+  display: none !important;
+}
+
+/* Explore button in the sidebar / bottom bar */
+html.rf-explore a[href="/explore/"],
+html.rf-explore a[href="/explore"] {
+  display: none !important;
+}
+html.rf-explore :is(div, li):has(> a[href="/explore/"]),
+html.rf-explore :is(div, li):has(> a[href="/explore"]) {
+  display: none !important;
+}
+
+/* "Reels" tab on profile pages, e.g. /username/reels/ */
+html.rf-on a[href$="/reels/"]:not([href="/reels/"]) {
+  display: none !important;
+}
+
+/* Reel thumbnails in profile grids / explore (never inside DMs or the single-reel view) */
+html.rf-links:not(.rf-direct):not(.rf-single) :is(a[href*="/reel/"], a[href^="/reels/"]):has(img, video) {
+  display: none !important;
+}
+
+/* Single-reel mode: no page scrolling, no next/previous controls */
+html.rf-single,
+html.rf-single body {
+  overflow: hidden !important;
+}
+html.rf-single [aria-label="Navigate to next Reel"],
+html.rf-single [aria-label="Navigate to previous Reel"],
+html.rf-single [aria-label="Next"],
+html.rf-single [aria-label="Previous"] {
+  display: none !important;
+}
+
+/* Banner shown while watching a single reel */
+#rf-banner {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.88);
+  color: #fff;
+  font: 500 13px/1.2 -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+#rf-banner button {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+#rf-banner button:hover {
+  background: #e8e8e8;
+}

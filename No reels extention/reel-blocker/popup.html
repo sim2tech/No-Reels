@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Reel Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="32" height="32">
+    <div>
+      <h1>Reel Blocker</h1>
+      <p>Keep DMs and stories. Lose the scroll.</p>
+    </div>
+  </header>
+
+  <label class="row">
+    <span>
+      <strong>Block Instagram Reels</strong>
+      <small>Hides the Reels button and redirects the Reels feed</small>
+    </span>
+    <input type="checkbox" id="enabled">
+    <i class="switch"></i>
+  </label>
+
+  <label class="row">
+    <span>
+      <strong>Allow reels sent to me</strong>
+      <small>Open one reel at a time, with scrolling disabled</small>
+    </span>
+    <input type="checkbox" id="allowSharedReels">
+    <i class="switch"></i>
+  </label>
+
+  <label class="row">
+    <span>
+      <strong>Hide reel thumbnails</strong>
+      <small>In profile grids and explore</small>
+    </span>
+    <input type="checkbox" id="hideReelLinks">
+    <i class="switch"></i>
+  </label>
+
+  <label class="row">
+    <span>
+      <strong>Block Explore page</strong>
+      <small>Hides the Explore button and redirects explore pages</small>
+    </span>
+    <input type="checkbox" id="blockExplore">
+    <i class="switch"></i>
+  </label>
+
+  <footer>
+    Pages blocked so far: <b id="blocked">0</b>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
